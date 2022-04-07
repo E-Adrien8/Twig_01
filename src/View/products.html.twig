@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bonjour</title>
+    <link rel="icon" href="/assets/images/favicon.png">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+
+<body>
+<pre>
+    <h1>BOUCLE</h1>
+
+{#https://twig.symfony.com/doc/3.x/filters/batch.html#}
+<table>
+    {% for row in products|batch(3, 'No item') %}
+        <tr>
+            {% for column in row %}
+                <td>{{ column }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
+
+{#    {% for product in products | slice(0, 3) %}#}
+{#        <p>{{ product }}</p>#}
+{#    {% endfor %}#}
+
+{#    {% for product in products | slice(3, 6) %}#}
+{#        <p>{{ product }}</p>#}
+{#    {% endfor %}#}
+
+</pre>
+<h1>DUMP</h1>
+<pre>
+<h2>{{ dump(products) }} </h2>
+</pre>
+</body>
+</html>
